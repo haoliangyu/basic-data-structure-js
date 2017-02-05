@@ -1,0 +1,22 @@
+{
+  "name": "basic-data-structure-js",
+  "version": "1.0.0",
+  "description": "basic data structure in JavaScript",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/haoliangyu/basic-data-structure-js.git"
+  },
+  "author": "Haoliang Yu <haholiang.yu@outlook.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/haoliangyu/basic-data-structure-js/issues"
+  },
+  "homepage": "https://github.com/haoliangyu/basic-data-structure-js#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0"
+  }
+}
