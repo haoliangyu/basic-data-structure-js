@@ -1,7 +1,8 @@
-export default class StaticHeap {
+export default class Heap {
 
   constructor(data) {
     this._heapArray = [];
+    this._size = 0;
 
     if (data) {
       this.heapify(data);
@@ -9,7 +10,7 @@ export default class StaticHeap {
   }
 
   size() {
-    return this._heapArray.length;
+    return this._size;
   }
 
   _swap(i, j) {
@@ -69,6 +70,7 @@ export default class StaticHeap {
 
   heapify(array) {
     this._heapArray = array;
+    this._size = array.length;
 
     let lastIndex = this._heapArray.length - 1;
     let lastInternal = this._getParentIndex(lastIndex);
@@ -78,15 +80,26 @@ export default class StaticHeap {
     }
   }
 
-  getMax(n) {
+  pull() {
+    let maxValue = this._heapArray[0];
+    this._swap(0, this._size - 1);
+    this._percolateDown(this._size - 2, 0);
+    this._size--;
+
+    return maxValue;
+  }
+
+  getKMax(n) {
     if (n === undefined) {
-      return this._heapArray[0];
+      n = 1;
     }
 
-    if (n >= this._heapArray.length) {
-      return this._heapArray;
-    } else {
-      return this._heapArray.slice(n);
+    let results = [];
+
+    for (let i = 0; i < n && this._size > 0; i++) {
+      results.push(this.pull());
     }
+
+    return results;
   }
 }

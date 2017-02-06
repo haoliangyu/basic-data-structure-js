@@ -6,4 +6,4 @@ Basic data structure in JavaScript, a fork of [basic-data-structure](https://git
 
 Make the implementation of algorithm easier.
 
-* StaticHeap
+* Heap
